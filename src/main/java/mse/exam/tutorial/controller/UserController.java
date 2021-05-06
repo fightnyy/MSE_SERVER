@@ -27,7 +27,6 @@ public class UserController {
     public ResponseEntity<User> signup(
             @Valid @RequestBody UserDto userDto
     ) {
-        System.out.println(userDto.);
         return ResponseEntity.ok(userService.signup(userDto));
     }
 
