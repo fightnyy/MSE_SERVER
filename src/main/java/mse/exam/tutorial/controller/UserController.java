@@ -27,6 +27,7 @@ public class UserController {
     public ResponseEntity<User> signup(
             @Valid @RequestBody UserDto userDto
     ) {
+        System.out.println(userDto.);
         return ResponseEntity.ok(userService.signup(userDto));
     }
 
@@ -35,6 +36,8 @@ public class UserController {
     public ResponseEntity<User> getMyUserInfo() {
         return ResponseEntity.ok(userService.getMyUserWithAuthorities().get());
     }
+
+
 
     @GetMapping("/user/{username}")
     @PreAuthorize("hasAnyRole('ADMIN')")
