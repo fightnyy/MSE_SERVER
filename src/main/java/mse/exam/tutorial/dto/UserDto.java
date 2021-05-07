@@ -11,6 +11,7 @@ import javax.validation.constraints.Size;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 public class UserDto {
 
    @NotNull
@@ -25,4 +26,5 @@ public class UserDto {
    @NotNull
    @Size(min = 3, max = 50)
    private String nickname;
+
 }

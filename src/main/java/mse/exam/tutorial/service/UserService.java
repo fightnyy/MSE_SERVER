@@ -49,8 +49,12 @@ public class UserService {
         return userRepository.findOneWithAuthoritiesByUsername(username);
     }
 
-    @Transactional(readOnly = true)
     public Optional<User> getMyUserWithAuthorities() {
         return SecurityUtil.getCurrentUsername().flatMap(userRepository::findOneWithAuthoritiesByUsername);
+    }
+
+    public User findOneWithUserByUsername(String username)
+    {
+        return userRepository.findOneWithUserByUsername(username);
     }
 }
