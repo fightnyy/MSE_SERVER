@@ -24,14 +24,23 @@ public class UserService {
 
     @Transactional
     public User signup(UserDto userDto) {
+        Authority authority;
         if (userRepository.findOneWithAuthoritiesByUsername(userDto.getUsername()).orElse(null) != null) {
             throw new RuntimeException("이미 가입되어 있는 유저입니다.");
         }
 
         //빌더 패턴의 장점
-        Authority authority = Authority.builder()
-                .authorityName("ROLE_USER")
-                .build();
+        if (!(userDto.getUsername().equals("admin"))) {
+             authority = Authority.builder()
+                    .authorityName("ROLE_USER")
+                    .build();
+        }
+        else {
+             authority = Authority.builder()
+                    .authorityName("ROLE_ADMIN")
+                    .build();
+            System.out.println("I'M HERE!!!!!!!");
+        }
 
         User user = User.builder()
                 .username(userDto.getUsername())

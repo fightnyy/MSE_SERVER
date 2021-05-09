@@ -37,6 +37,9 @@ public class User {
    @Column(name = "activated")
    private boolean activated;
 
+   @Embedded
+   private Chito chito = new Chito(10, 0.0, 50, 50, 50);
+
    @ManyToMany
    @JoinTable(
       name = "user_authority",
