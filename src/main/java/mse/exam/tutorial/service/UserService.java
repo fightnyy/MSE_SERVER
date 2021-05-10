@@ -9,8 +9,11 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.util.Collections;
 import java.util.Optional;
+import java.util.Set;
 
 @Service
 public class UserService {
@@ -31,15 +34,15 @@ public class UserService {
 
         //빌더 패턴의 장점
         if (!(userDto.getUsername().equals("admin"))) {
-             authority = Authority.builder()
+            authority = Authority.builder()
                     .authorityName("ROLE_USER")
                     .build();
         }
         else {
-             authority = Authority.builder()
+//            Set<Authority> authorities = userRepository.findOneWithUserByUsername(userDto.getUsername()).getAuthorities();
+            authority = Authority.builder()
                     .authorityName("ROLE_ADMIN")
                     .build();
-            System.out.println("I'M HERE!!!!!!!");
         }
 
         User user = User.builder()

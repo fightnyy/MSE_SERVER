@@ -4,6 +4,7 @@ import mse.exam.tutorial.dto.LoginDto;
 import mse.exam.tutorial.dto.TokenDto;
 import mse.exam.tutorial.dto.UserDto;
 import mse.exam.tutorial.entity.Authority;
+import mse.exam.tutorial.entity.Chito;
 import mse.exam.tutorial.entity.User;
 import mse.exam.tutorial.jwt.TokenProvider;
 import mse.exam.tutorial.service.UserService;
@@ -29,6 +30,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import javax.transaction.Transactional;
 
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.Optional;
 import java.util.Set;
 
@@ -104,5 +106,24 @@ class AuthControllerTest {
         //then
         ResponseEntity<TokenDto> authorize = authController.authorize(loginDto);
         assertThat(authorize).isNotNull();
+    }
+    
+    @Test
+    @DisplayName("치토가져오기")
+    void getChito()
+    {
+        UserDto userDto = new UserDto("admin","admin","admin");
+        LoginDto loginDto = new LoginDto(userDto.getUsername(), userDto.getPassword());
+
+        User user = userService.signup(userDto);
+        Optional<User> savedUser = userService.getUserWithAuthorities(user.getUsername());
+
+        savedUser.get().getAuthorities().iterator()
+
+//        int length = authorities.toArray().length;
+//        System.out.println("length = " + length);
+//        String s = Arrays.toString(authorities.toArray());
+//        System.out.println("sisherhe = " + s);
+//        System.out.println("chito = " + chito);
     }
 }
