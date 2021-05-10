@@ -2,9 +2,9 @@ package mse.exam.tutorial.entity;
 
 
 import lombok.*;
-import org.springframework.lang.Nullable;
+import lombok.extern.slf4j.Slf4j;
 
-import javax.persistence.*;
+import javax.persistence.Embeddable;
 
 
 @NoArgsConstructor(access= AccessLevel.PUBLIC)
@@ -14,6 +14,7 @@ import javax.persistence.*;
 @Embeddable
 @ToString
 @Builder
+@Slf4j
 public class Chito {
 
 
@@ -28,4 +29,12 @@ public class Chito {
     private Integer speech=50;
 
 
+    public void setTimePoint(Integer timePoint) {
+        if (timePoint>0) {
+            this.timePoint = timePoint;
+        }
+        else {
+            log.warn("Chito의 TimePoint가 0이하 입니다. timepoint : {}",timePoint);
+        }
+    }
 }

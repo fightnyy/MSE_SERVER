@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.test.context.support.WithUserDetails;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.transaction.BeforeTransaction;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,9 +19,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
 @Transactional
+@Rollback(value = false)
 @WithUserDetails(value = "user1")
-public class UserControllerTest {
-    static final Logger log = LoggerFactory.getLogger(UserControllerTest.class);
+public class ActivityControllerTest {
+    static final Logger log = LoggerFactory.getLogger(ActivityControllerTest.class);
     @Autowired ActivityController ac;
     @Autowired UserService userService;
     User loginUser;
@@ -28,8 +30,10 @@ public class UserControllerTest {
     @BeforeTransaction
     public void afterLogin()
     {
-        UserDto userDto = new UserDto("user1","user1","nick_user");
-        userService.signup(userDto);
+        if (!userService.getUserWithAuthorities("user1").isPresent()) {
+            UserDto userDto = new UserDto("user1", "user1", "nick_user");
+            loginUser = userService.signup(userDto);
+        }
     }
 
     @Test
@@ -41,7 +45,7 @@ public class UserControllerTest {
         if (userService.getUserWithAuthorities("loginUser").isPresent()) {
             loginUser = userService.getUserWithAuthorities("loginUser").get();
         }
-        assertThat(outChito.getIntelligence()).isEqualTo(loginUser.getChito().getIntelligence());
+        assertThat(outChito.getIntelligence()).isEqualTo(53);
     }
 
 
@@ -51,8 +55,10 @@ public class UserControllerTest {
     {
         Chito outChito = ac.doWorkout();
         log.debug("outChito = {}", outChito);
-        loginUser= userService.getUserWithAuthorities("loginUser").get();
-        assertThat(outChito.getHealth()).isEqualTo(53).isEqualTo(loginUser.getChito().getHealth());
+        if (userService.getUserWithAuthorities("loginUser").isPresent()) {
+            loginUser = userService.getUserWithAuthorities("loginUser").get();
+        }
+        assertThat(outChito.getHealth()).isEqualTo(53);
     }
 
     @Test
@@ -61,6 +67,10 @@ public class UserControllerTest {
     {
         Chito outChito = ac.doInterview();
         log.debug("outChito = {}",outChito);
+        if (userService.getUserWithAuthorities("loginUser").isPresent()) {
+            loginUser = userService.getUserWithAuthorities("loginUser").get();
+        }
+        assertThat(outChito.getSpeech()).isEqualTo(53).isEqualTo(loginUser.getChito().getSpeech());
     }
 
 }

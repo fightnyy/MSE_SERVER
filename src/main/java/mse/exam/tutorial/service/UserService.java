@@ -27,10 +27,11 @@ public class UserService {
 
     @Transactional
     public User signup(UserDto userDto) {
+        System.out.println("UserService에 들어왔다!!!!!!");
         Authority authority;
-        if (userRepository.findOneWithAuthoritiesByUsername(userDto.getUsername()).orElse(null) != null) {
-            throw new RuntimeException("이미 가입되어 있는 유저입니다.");
-        }
+//        if (userRepository.findOneWithAuthoritiesByUsername(userDto.getUsername()).orElse(null) != null) {
+//            throw new RuntimeException("이미 가입되어 있는 유저입니다.");
+//        }
 
         //빌더 패턴의 장점
         if (!(userDto.getUsername().equals("admin"))) {

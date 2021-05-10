@@ -47,7 +47,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 @ExtendWith({RestDocumentationExtension.class, SpringExtension.class})//Junit5 를 사용할 때 문서 스니펫 생성의 첫번째 단계는
 @Transactional
-
 class AuthControllerTest {
 
     @Autowired
@@ -107,23 +106,5 @@ class AuthControllerTest {
         ResponseEntity<TokenDto> authorize = authController.authorize(loginDto);
         assertThat(authorize).isNotNull();
     }
-    
-    @Test
-    @DisplayName("치토가져오기")
-    void getChito()
-    {
-        UserDto userDto = new UserDto("admin","admin","admin");
-        LoginDto loginDto = new LoginDto(userDto.getUsername(), userDto.getPassword());
 
-        User user = userService.signup(userDto);
-        Optional<User> savedUser = userService.getUserWithAuthorities(user.getUsername());
-
-        savedUser.get().getAuthorities().iterator()
-
-//        int length = authorities.toArray().length;
-//        System.out.println("length = " + length);
-//        String s = Arrays.toString(authorities.toArray());
-//        System.out.println("sisherhe = " + s);
-//        System.out.println("chito = " + chito);
-    }
 }
