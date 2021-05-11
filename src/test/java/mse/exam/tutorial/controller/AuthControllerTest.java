@@ -68,6 +68,7 @@ class AuthControllerTest {
                 .build();
     }
 
+    //controller 테스트 말고 더 작은 단위로 테스트를 해보자
     @Test
     @DisplayName("회원가입")
     void SignUp(){
@@ -75,7 +76,7 @@ class AuthControllerTest {
         UserDto userDto = new UserDto("youngyun","54256","YYY");
 
         //when
-        User saved = userService.signup((userDto));
+        User saved = userService.signup(userDto);
 
         String cont = "{\"username\":\"youngyun\",\"password\":\"54256\",\"nickname\":\"YYY\"}";
 
@@ -91,6 +92,8 @@ class AuthControllerTest {
         {
             System.out.println("인정되지 않은 메소드입니다.");
         }
+
+        //실패를 해야 성공하는 테스트 1개, 그냥 성공하는 테스트 1개
     }
     @Test
     @DisplayName("로그인")
