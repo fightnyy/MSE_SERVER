@@ -37,7 +37,7 @@ dependencies {
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
-    testCompile 'org.springframework.restdocs:spring-restdocs-mockmvc'
+    testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
 
 
     compile group: 'io.jsonwebtoken', name: 'jjwt-api', version: '0.11.2'
@@ -48,8 +48,12 @@ dependencies {
 
 test {
     useJUnitPlatform()
+    //docs 위치 설정
     outputs.dir snippetsDir
+
     finalizedBy jacocoTestReport //테스트가 실행되고 리포트는 만들어진다.
+
+    //jacoco 저장 위치 설정
     jacoco {
         destinationFile = layout.buildDirectory.file('jacoco/jacocoTest.exec').get().asFile
         classDumpDir = layout.buildDirectory.dir('jacoco/classpathdumps').get().asFile

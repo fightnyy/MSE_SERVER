@@ -10,57 +10,54 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.security.test.context.support.WithUserDetails;
 import org.springframework.test.context.transaction.BeforeTransaction;
 import org.springframework.transaction.annotation.Transactional;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 
-@SpringBootTest
-@Transactional
+//@SpringBootTest
+//@Transactional
 @WithUserDetails(value = "user1")
-public class UserControllerTest {
+public class UserControllerTest extends CommonControllerTest{
     static final Logger log = LoggerFactory.getLogger(UserControllerTest.class);
-    @Autowired ActivityController ac;
-    @Autowired UserService userService;
+    @MockBean
+    ActivityController ac;
+    @MockBean
+    UserService userService;
     User loginUser;
 
     @BeforeTransaction
-    public void afterLogin()
+    public void 로그인하기()
     {
         UserDto userDto = new UserDto("user1","user1","nick_user");
+        UserDto admin = new UserDto("admin","admin","admin");
         userService.signup(userDto);
     }
 
     @Test
-    @DisplayName("공부하기")
-    public void studyTest()
+    public void 일반유저정보확인()
     {
-        Chito outChito = ac.doStudy();
-        log.error("outChito = {}", outChito);
-        if (userService.getUserWithAuthorities("loginUser").isPresent()) {
-            loginUser = userService.getUserWithAuthorities("loginUser").get();
-        }
-        assertThat(outChito.getIntelligence()).isEqualTo(loginUser.getChito().getIntelligence());
-    }
-
-
-    @Test
-    @DisplayName("운동하기")
-    public void doExercise()
-    {
-        Chito outChito = ac.doWorkout();
-        log.debug("outChito = {}", outChito);
-        loginUser= userService.getUserWithAuthorities("loginUser").get();
-        assertThat(outChito.getHealth()).isEqualTo(53).isEqualTo(loginUser.getChito().getHealth());
+        assertThat(userService.getMyUserWithAuthorities()).isNotEmpty();
     }
 
     @Test
-    @DisplayName("인터뷰하기")
-    public void doInterview()
+    @WithUserDetails(value = "admin")
+    public void 관리자권한으로_일반유저_정보_확인하기()
     {
-        Chito outChito = ac.doInterview();
-        log.debug("outChito = {}",outChito);
+        this.mockMvc.perform(get("/api/user/user1"))
+        .andExpect();
     }
+
+    @Test
+    public void 일반권한으로_일반유저_정보_확인하기()
+    {
+
+    }
+
+
+
 
 }
