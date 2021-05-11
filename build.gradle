@@ -47,7 +47,10 @@ dependencies {
 }
 
 test {
+    //test task에서는 JUnit을 사용한다고 Gradle에 알려주는것
+    //위 설정을 하지 않으면 아래처럼 jacocoTestReport Task와 jacocoTestCoverageVerification Task를 스킵하게 됨
     useJUnitPlatform()
+
     outputs.dir snippetsDir
     finalizedBy jacocoTestReport //테스트가 실행되고 리포트는 만들어진다.
     jacoco {
@@ -82,8 +85,6 @@ bootJar {
 jacoco {
     //jacoco 버전
     toolVersion = '0.8.6'
-    //jacoco report 결과물 디렉토리
-    reportsDirectory = layout.buildDirectory.dir('custom/JacocoReportDir')
 }
 
 jacocoTestCoverageVerification{
@@ -124,6 +125,15 @@ jacocoTestCoverageVerification{
                 maximum = 200
 //              maximum = 8
             }
+
+            //조건 커버리지라는 것도 있다
+            // 모든 조건식의 내부 조건이 true/false를 가지게 되면 충족된다.
+            // 내부조건이란 조건식 내부의 각각의 조건을 의미한다
+
+
+
+
+
 
             // 커버리지 체크를 제외할 클래스들
             excludes = [

@@ -35,6 +35,7 @@ public class Chito {
         }
         else {
             log.warn("Chito의 TimePoint가 0이하 입니다. timepoint : {}",timePoint);
+            this.timePoint=0;
         }
     }
 }

@@ -71,7 +71,7 @@ class AuthControllerTest {
     //controller 테스트 말고 더 작은 단위로 테스트를 해보자
     @Test
     @DisplayName("회원가입")
-    void SignUp(){
+    void SignUp() throws Exception {
         //given
         UserDto userDto = new UserDto("youngyun","54256","YYY");
 
@@ -82,18 +82,12 @@ class AuthControllerTest {
 
         System.out.println("what is conf cont = " + cont);
         //then
-        try {
-            mockMvc.perform(post("/api/signup").content(cont).contentType("application/json"))
-                    .andDo(print())
-                    .andExpect(status().isOk())
-                    .andDo(document("index"));
-        }
-        catch (Exception e)
-        {
-            System.out.println("인정되지 않은 메소드입니다.");
-        }
 
-        //실패를 해야 성공하는 테스트 1개, 그냥 성공하는 테스트 1개
+        mockMvc.perform(post("/api/signup").content(cont).contentType("application/json"))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andDo(document("index"));
+
     }
     @Test
     @DisplayName("로그인")

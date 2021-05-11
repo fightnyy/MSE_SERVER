@@ -75,10 +75,6 @@ public class User {
          authorities = new HashSet<>(auth);
          System.out.println("authorities = " + authorities);
          Iterator<Authority> iterator1 = authorities.iterator();
-         while(iterator1.hasNext())
-         {
-            System.out.println(iterator1.next().getAuthorityName());
-         }
       }
    }
 }
