@@ -3,6 +3,7 @@ package mse.exam.tutorial.controller;
 import mse.exam.tutorial.dto.UserDto;
 import mse.exam.tutorial.entity.Chito;
 import mse.exam.tutorial.entity.User;
+import mse.exam.tutorial.exception.NoUserFoundException;
 import mse.exam.tutorial.service.UserService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -77,12 +78,11 @@ public class ActivityControllerTest {
     {
         Chito outChito = ac.doInterview();
         log.debug("outChito = {}",outChito);
-        if (userService.getUserWithAuthorities("loginUser").isPresent()) {
-            loginUser = userService.getUserWithAuthorities("loginUser").get();
-        }
-        log.error(loginUser.toString());
-//        assertThat(outChito.getSpeech()).isEqualTo(53);
-//        assertThat(loginUser.getChito().getSpeech()).isEqualTo(53);
+        loginUser = userService.getUserWithAuthorities("user1").orElseThrow(NoUserFoundException::new);
+        assertThat(outChito.getSpeech()).isEqualTo(53);
+        assertThat(loginUser.getChito().getSpeech()).isEqualTo(53);
+
+
     }
 
 }

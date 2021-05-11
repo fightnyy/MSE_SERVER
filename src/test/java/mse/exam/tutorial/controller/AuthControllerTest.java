@@ -73,14 +73,9 @@ class AuthControllerTest {
     @DisplayName("회원가입")
     void SignUp() throws Exception {
         //given
-        UserDto userDto = new UserDto("youngyun","54256","YYY");
-
-        //when
-        User saved = userService.signup(userDto);
 
         String cont = "{\"username\":\"youngyun\",\"password\":\"54256\",\"nickname\":\"YYY\"}";
-
-        System.out.println("what is conf cont = " + cont);
+        //when
         //then
 
         mockMvc.perform(post("/api/signup").content(cont).contentType("application/json"))
