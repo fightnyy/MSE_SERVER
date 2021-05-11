@@ -37,27 +37,4 @@ public class UserControllerTest extends CommonControllerTest{
         userService.signup(userDto);
     }
 
-    @Test
-    public void 일반유저정보확인()
-    {
-        assertThat(userService.getMyUserWithAuthorities()).isNotEmpty();
-    }
-
-    @Test
-    @WithUserDetails(value = "admin")
-    public void 관리자권한으로_일반유저_정보_확인하기()
-    {
-        this.mockMvc.perform(get("/api/user/user1"))
-        .andExpect();
-    }
-
-    @Test
-    public void 일반권한으로_일반유저_정보_확인하기()
-    {
-
-    }
-
-
-
-
 }

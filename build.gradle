@@ -7,7 +7,7 @@ plugins {
     id 'jacoco'
 }
 
-group = 'me'
+group = 'MSE'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
@@ -40,15 +40,16 @@ dependencies {
     testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
 
 
-    compile group: 'io.jsonwebtoken', name: 'jjwt-api', version: '0.11.2'
-    runtime group: 'io.jsonwebtoken', name: 'jjwt-impl', version: '0.11.2'
-    runtime group: 'io.jsonwebtoken', name: 'jjwt-jackson', version: '0.11.2'
+    implementation group: 'io.jsonwebtoken', name: 'jjwt-api', version: '0.11.2'
+    runtimeOnly group: 'io.jsonwebtoken', name: 'jjwt-impl', version: '0.11.2'
+    runtimeOnly group: 'io.jsonwebtoken', name: 'jjwt-jackson', version: '0.11.2'
 
 }
 
 test {
+    //test task에서는 JUnit을 사용한다고 Gradle에 알려주는것
+    //위 설정을 하지 않으면 아래처럼 jacocoTestReport Task와 jacocoTestCoverageVerification Task를 스킵하게 됨
     useJUnitPlatform()
-    //docs 위치 설정
     outputs.dir snippetsDir
 
     finalizedBy jacocoTestReport //테스트가 실행되고 리포트는 만들어진다.
@@ -86,27 +87,61 @@ bootJar {
 jacoco {
     //jacoco 버전
     toolVersion = '0.8.6'
-    //jacoco report 결과물 디렉토리
-    reportsDirectory = layout.buildDirectory.dir('custom/JacocoReportDir')
 }
 
 jacocoTestCoverageVerification{
     violationRules{
         rule{
             limit{
-                minimum = 0.5
+                minimum = 1.0
             }
         }
         rule {
-            enabled = false
-            element = 'CLASS'
-            includes = ['org.gradle.*']
+            //룰을 간단히 켜고 끌 수 있다.
+            enabled = true
 
+            //룰을 체크할 단위는 클래스 단위이다
+            element = 'CLASS'
+
+            //브랜치 커버리지를 최소한 90% 만족시켜야 한다
+            //브랜치 커버리지란 모든 조건식이 true/false를 가지게 되면 충족된다
+            limit {
+                counter = 'BRANCH'
+                value = 'COVEREDRATIO'
+                minimum = 0.90
+            }
+
+            // 라인 커버리지를 최소한 80% 만족시켜야 한다.
+            // Line은 구문이라고 생각하면 된다
+            // 코드 한줄이 한번이상 실행된다면 충족된다
+            limit {
+                counter = 'LINE'
+                value = 'COVEREDRATIO'
+                minimum = 0.50
+            }
+
+            // 빈 줄을 제외한 코드의 라인수를 최대 200라인으로 제한한다.
             limit {
                 counter = 'LINE'
                 value = 'TOTALCOUNT'
-                maximum = 0.3
+                maximum = 200
+//              maximum = 8
             }
+
+            //조건 커버리지라는 것도 있다
+            // 모든 조건식의 내부 조건이 true/false를 가지게 되면 충족된다.
+            // 내부조건이란 조건식 내부의 각각의 조건을 의미한다
+
+
+
+
+
+
+            // 커버리지 체크를 제외할 클래스들
+            excludes = [
+//                    '*.test.*',
+//                    '*.Kotlin*'
+            ]
         }
     }
 }
