@@ -1,6 +1,7 @@
 language: java
 jdk:
   - openjdk11
+  - oraclejdk11
 
 branches:
   only:
@@ -11,10 +12,11 @@ cache:
   directories:
     - '$HOME/.m2/repository'
     - '$HOME/.gradle'
+
 script : "/.gradlew clean build"
 
 # CI 실행 완료시 메일로 알람
 notifications:
   email:
     recipients:
-      - "fightnyy@ajou.ac.kr"
+      - fightnyy@ajou.ac.kr
