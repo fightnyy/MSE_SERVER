@@ -55,10 +55,10 @@ test {
     finalizedBy jacocoTestReport //테스트가 실행되고 리포트는 만들어진다.
 
     //jacoco 저장 위치 설정
-    jacoco {
-        destinationFile = layout.buildDirectory.file('jacoco/jacocoTest.exec').get().asFile
-        classDumpDir = layout.buildDirectory.dir('jacoco/classpathdumps').get().asFile
-    }
+//    jacoco {
+//        destinationFile = layout.buildDirectory.file('jacoco/jacocoTest.exec').get().asFile
+//        classDumpDir = layout.buildDirectory.dir('jacoco/classpathdumps').get().asFile
+//    }
 }
 
 
@@ -67,7 +67,7 @@ jacocoTestReport{
         //jacoco report 를 어떤 형식으로 볼것인지 알려준는것
         xml.enabled false
         csv.enabled true
-        html.destination layout.buildDirectory.dir('jacocoHtml').get().asFile
+        html.enabled true
     }
     dependsOn test //리포트가 만들어지기전에 테스트가 실행되어야 한다
 }
@@ -117,7 +117,7 @@ jacocoTestCoverageVerification{
             limit {
                 counter = 'LINE'
                 value = 'COVEREDRATIO'
-                minimum = 0.50
+                minimum = 1.0
             }
 
             // 빈 줄을 제외한 코드의 라인수를 최대 200라인으로 제한한다.
