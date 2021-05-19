@@ -57,7 +57,7 @@ public class User {
       Authority next = iterator.next();
       if (next.getAuthorityName().equals("ROLE_USER")) {
          chito = Chito.builder()
-                 .timePoint(10)
+                 .week(0)
                  .grade(0.0)
                  .intelligence(50)
                  .health(50)

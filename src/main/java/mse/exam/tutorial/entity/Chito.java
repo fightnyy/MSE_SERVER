@@ -18,7 +18,7 @@ import javax.persistence.Embeddable;
 public class Chito {
 
 
-    private Integer timePoint=10;
+    private Integer week=10;
 
     private Double grade=0.0;
 
@@ -29,13 +29,13 @@ public class Chito {
     private Integer speech=50;
 
 
-    public void setTimePoint(Integer timePoint) {
-        if (timePoint>0) {
-            this.timePoint = timePoint;
+    public void setTimePoint(Integer week) {
+        if (week>0) {
+            this.week = week;
         }
         else {
-            log.warn("Chito의 TimePoint가 0이하 입니다. timepoint : {}",timePoint);
-            this.timePoint=0;
+            log.warn("Chito의 TimePoint가 0이하 입니다. timepoint : {}",week);
+            this.week=0;
         }
     }
 }

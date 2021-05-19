@@ -14,8 +14,8 @@ public class ChitoTest {
     {
         Chito chito = new Chito();
         chito.setTimePoint(-1);
-        assertThat(chito.getTimePoint()).isEqualTo(0);
+        assertThat(chito.getWeek()).isEqualTo(0);
         chito.setTimePoint(5);
-        assertThat(chito.getTimePoint()).isEqualTo(5);
+        assertThat(chito.getWeek()).isEqualTo(5);
     }
 }

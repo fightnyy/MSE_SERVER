@@ -1,5 +1,6 @@
 package mse.exam.tutorial.controller;
 
+import mse.exam.tutorial.BaseTest;
 import mse.exam.tutorial.dto.UserDto;
 import mse.exam.tutorial.entity.Chito;
 import mse.exam.tutorial.entity.User;
@@ -17,11 +18,15 @@ import org.springframework.transaction.annotation.Transactional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-//@SpringBootTest
-//@Transactional
+
+
+
 @WithUserDetails(value = "user1")
-public class UserControllerTest extends CommonControllerTest{
+public class UserControllerTest extends BaseTest {
     static final Logger log = LoggerFactory.getLogger(UserControllerTest.class);
     @MockBean
     ActivityController ac;

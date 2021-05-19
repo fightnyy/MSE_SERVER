@@ -1,5 +1,6 @@
 package mse.exam.tutorial.controller;
 
+import mse.exam.tutorial.BaseTest;
 import mse.exam.tutorial.dto.LoginDto;
 import mse.exam.tutorial.dto.TokenDto;
 import mse.exam.tutorial.dto.UserDto;
@@ -40,14 +41,15 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.BDDMockito.given;
 import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.document;
 import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.documentationConfiguration;
+import static org.springframework.restdocs.request.RequestDocumentation.parameterWithName;
+import static org.springframework.restdocs.request.RequestDocumentation.pathParameters;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@SpringBootTest
-@ExtendWith({RestDocumentationExtension.class, SpringExtension.class})//Junit5 를 사용할 때 문서 스니펫 생성의 첫번째 단계는
+
 @Transactional
-class AuthControllerTest {
+class AuthControllerTest extends BaseTest {
 
     @Autowired
     private UserService userService;
@@ -59,44 +61,41 @@ class AuthControllerTest {
     @Autowired
     private WebApplicationContext context;
 
-    private MockMvc mockMvc;
-
-    @BeforeEach
-    public void setUp(RestDocumentationContextProvider restDocumentation) {
-        this.mockMvc = MockMvcBuilders.webAppContextSetup(context)
-                .apply(documentationConfiguration(restDocumentation))
-                .build();
-    }
 
     //controller 테스트 말고 더 작은 단위로 테스트를 해보자
     @Test
-    @DisplayName("회원가입")
-    void SignUp() throws Exception {
+    void 회원가입_하기() throws Exception {
         //given
+        UserDto userDto = new UserDto("youngyun", "12345", "YYYYY");
 
-        String cont = "{\"username\":\"youngyun\",\"password\":\"54256\",\"nickname\":\"YYY\"}";
         //when
         //then
 
-        mockMvc.perform(post("/api/signup").content(cont).contentType("application/json"))
+        mockMvc.perform(post("/api/signup")
+                .content(objectMapper.writeValueAsString(userDto))
+                .contentType("application/json"))
                 .andDo(print())
                 .andExpect(status().isOk())
-                .andDo(document("index"));
+                .andDo(document("회원가입"));
 
     }
     @Test
     @DisplayName("로그인")
-    void LoginTest() {
+    void LoginTest() throws Exception{
         //given
-        UserDto userDto = new UserDto("youngyun1", "54256", "YY");
+        UserDto userDto = new UserDto("youngyun1", "54256", "YYYYY");
         LoginDto loginDto = new LoginDto(userDto.getUsername(), userDto.getPassword());
         //when
         User user = userService.signup(userDto);
         Optional<User> savedUser = userService.getUserWithAuthorities(user.getUsername());
 
         //then
-        ResponseEntity<TokenDto> authorize = authController.authorize(loginDto);
-        assertThat(authorize).isNotNull();
+        mockMvc.perform((post("/api/authenticate")
+                .content(objectMapper.writeValueAsString(loginDto)))
+                .contentType("application/json"))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andDo(document("로그인"));
     }
 
 }

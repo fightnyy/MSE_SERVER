@@ -42,7 +42,7 @@ public class ActivityService {
         User findUser = ur.findOneWithUserByUsername(currentUsername.get());
         Chito findChito = findUser.getChito();
         findChito.setIntelligence(findChito.getIntelligence() + upIntelli);
-        findChito.setTimePoint(findChito.getTimePoint()-1);
+        findChito.setWeek(findChito.getWeek()+1);
         return findChito;
     }
 
@@ -52,7 +52,7 @@ public class ActivityService {
         User findUser = ur.findOneWithUserByUsername(currentUsername.get());
         Chito findChito = findUser.getChito();
         findChito.setHealth(findChito.getHealth() + upHealth);
-        findChito.setTimePoint(findChito.getTimePoint()-1);
+        findChito.setWeek(findChito.getWeek()-1);
         return findChito;
     }
 
@@ -62,7 +62,7 @@ public class ActivityService {
         User findUser = ur.findOneWithUserByUsername(currentUsername.get());
         Chito findChito = findUser.getChito();
         findChito.setSpeech(findChito.getSpeech() + upInterv);
-        findChito.setTimePoint(findChito.getTimePoint()-1);
+        findChito.setWeek(findChito.getWeek()-1);
         return findChito;
     }
     
