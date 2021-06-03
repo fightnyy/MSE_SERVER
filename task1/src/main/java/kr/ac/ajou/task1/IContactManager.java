@@ -7,8 +7,6 @@ import java.util.List;
 import java.util.UUID;
 
 public interface IContactManager {
-    @Autowired
-    ContactController cc;
     boolean addContact(Contact contact);
     boolean deleteContact(Contact contact);
     boolean editContact(Contact contact);
