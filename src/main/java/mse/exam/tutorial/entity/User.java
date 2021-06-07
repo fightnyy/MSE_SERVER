@@ -43,6 +43,10 @@ public class User {
    @Embedded
    private Chito chito;
 
+   @JsonIgnore
+   @OneToMany(mappedBy = "createdBy",fetch = FetchType.LAZY)
+   private List<Question> questions;
+
    @ManyToMany
    @JoinTable(
       name = "user_authority",

@@ -68,7 +68,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .headers()
                 .frameOptions()
                 .sameOrigin()
-
                 // 세션을 사용하지 않기 때문에 STATELESS로 설정
                 .and()
                 .sessionManagement()
@@ -78,6 +77,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/api/authenticate").permitAll()
                 .antMatchers("/api/signup").permitAll()
+                .antMatchers("/api/admin/**").access("hasRole('ADMIN')")
 
                 .anyRequest().authenticated()
 

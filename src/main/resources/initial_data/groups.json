@@ -1,0 +1,1183 @@
+[
+  {
+    "gid": 1,
+    "g_name": "Software Development Life Cycle (SDLC)",
+    "problems":
+    [
+      {
+        "id": 1,
+        "q_body": "What Software Development Process Model is not needed reason?",
+        "s1_body": "To prevent software development from failing",
+        "s2_body": "Projects are late, under budgeted, or delivered with fewer features than planned",
+        "s3_body": "Teams who work on the software need a common method to work together",
+        "s4_body": "Creating complex software is easy.",
+        "ans":4,
+        "hint": "Creating complex software is not easy."
+      },
+      {
+        "id": 2,
+        "q_body": "What is not in the phases of SDLC?",
+        "s1_body": "Planning",
+        "s2_body": "Testing & Integration",
+        "s3_body": "Marketing",
+        "s4_body": "Analysis",
+        "ans":3,
+        "hint": "Marketing is not in the SDLC phase"
+      },
+      {
+        "id": 3,
+        "q_body": "What are the inputs and outputs of the Planning Phase?",
+        "s1_body": "Input: Client proposal / project idea \noutput: Feasibility study report, project plan",
+        "s2_body": "Input: SRS(Software Requirement Specification).\noutput: DD(Design Document)",
+        "s3_body": "Input: DD (Design Document)\nOutput: Program/software, including source code, content, and media assets",
+        "s4_body": "Input: Un-tested program/software\nOutput: tested program/software, test report(s).",
+        "ans":1,
+        "hint": "Client proposal / project idea & Feasibility study report, project plan"
+      },
+      {
+        "id": 4,
+        "q_body": "What is the goal of the Planning Phase?",
+        "s1_body": "Create a simple plan",
+        "s2_body": "Producing a detailed implementation plan",
+        "s3_body": "Market Research Completed",
+        "s4_body": "Producing a detailed project plan",
+        "ans":4,
+        "hint": "Detailed project plan"
+      },
+      {
+        "id": 5,
+        "q_body": "What is not the kinds of feasibility studies?",
+        "s1_body": "Technical feasibility study",
+        "s2_body": "Creative feasibility study",
+        "s3_body": "Economic feasibility study",
+        "s4_body": "Schedule feasibility study",
+        "ans":2,
+        "hint": "Creative...?"
+      },
+      {
+        "id": 6,
+        "q_body": "What are the inputs and outputs of the analysis phase?",
+        "s1_body": "Input: Client proposal / project idea \noutput: Feasibility study report, project plan (incl. requirements)",
+        "s2_body": "Input: SRS(Software Requirement Specification).\noutput: DD(Design Document)",
+        "s3_body": "Input: Feasibility study and list of customer requirements\noutput: SRS (Software Requirement Specification)",
+        "s4_body": "Input: Un-tested program/software\nOutput: tested program/software, test report(s).",
+        "ans":3,
+        "hint": "Feasibility study and list of customer requirements & SRS"
+      },
+      {
+        "id": 7,
+        "q_body": "What is requirement analysis?",
+        "s1_body": "Use the customer requirements to clearly define and document the product requirements and get them approved from the customer or the market analysts.",
+        "s2_body": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "s3_body": "It is Software Requirement Specification.",
+        "s4_body": "Authentication of a user when he/she tries to log into the system.",
+        "ans":1,
+        "hint": "1...1..."
+      },
+      {
+        "id": 8,
+        "q_body": "What is an SRS?",
+        "s1_body": "A representation of a software design that is to be used for recording design information, addressing various design concerns, and communicating that information to the design's stakeholders.",
+        "s2_body": "It is a document that consists of all the product requirements/features to be designed and developed during the project life cycle.",
+        "s3_body": "There could be something like an alpha test.",
+        "s4_body": "Special Requirement Specification",
+        "ans":2,
+        "hint": "2...2..."
+      },
+      {
+        "id": 9,
+        "q_body": "What does SRS include?",
+        "s1_body": "It includes Functional requirements and Semi-functional requirements",
+        "s2_body": "It includes Functional requirements and Non-functional requirements",
+        "s3_body": "It includes Functional requirements and pre-functional requirements",
+        "s4_body": "It includes Technical requirements and Non-technical requirements",
+        "ans":2,
+        "hint": "Functional requirements and Non-functional requirements"
+      },
+      {
+        "id": 10,
+        "q_body": "What is not the process of requirements elicitation and analysis?",
+        "s1_body": "Requirements discovery",
+        "s2_body": "Requirements classification and organization",
+        "s3_body": "Requirements specification",
+        "s4_body": "Requirements dedication",
+        "ans":4,
+        "hint": "dedication...?"
+      },
+      {
+        "id": 11,
+        "q_body": "What UML is not available in Analysis Phase?",
+        "s1_body": "Use-case diagram",
+        "s2_body": "State diagram",
+        "s3_body": "Activity diagram",
+        "s4_body": "Class diagram",
+        "ans":3,
+        "hint": "Activity"
+      },
+      {
+        "id": 12,
+        "q_body": "What is not a some examples of functional requirements?",
+        "s1_body": "Emails should be sent with a latency of no greater than 12 hours.",
+        "s2_body": "Modifying a booked flight.",
+        "s3_body": "Booking a new flight after logging in.",
+        "s4_body": "A verification email is sent to user after new booking/modifying booking",
+        "ans":1,
+        "hint": "Emails"
+      },
+      {
+        "id": 13,
+        "q_body": "What is not a example of non-functional requirements?",
+        "s1_body": "Each request should be processed within 5 seconds.",
+        "s2_body": "Booking a new flight after logging in.",
+        "s3_body": "Emails should be sent with a latency of no greater than 12 hours.",
+        "s4_body": "The site should load in 3 seconds when the number of simultaneous users is > 10000",
+        "ans":2,
+        "hint": "Booking"
+      },
+      {
+        "id": 14,
+        "q_body": "What is the difference between functional requirements and non-functional requirements?",
+        "s1_body": "Functional requirements are the functional content of the service. Non-functional requirements, however, refer to other things besides functional content.",
+        "s2_body": "Functional requirements is more important.",
+        "s3_body": "Non-functional requirements are emotional.",
+        "s4_body": "The distinction between the two is actually meaningless.",
+        "ans":1,
+        "hint": "The longest one..."
+      },
+      {
+        "id": 15,
+        "q_body": "What are the inputs and outputs of the design phase?",
+        "s1_body": "Input: Client proposal / project idea \noutput: Feasibility study report, project plan (incl. requirements)",
+        "s2_body": "Input: SRS(Software Requirement Specification).\noutput: DD(Design Document)",
+        "s3_body": "Input: DD (Design Document)\nOutput: Program/software, including source code, content, and media assets",
+        "s4_body": "Input: Un-tested program/software\nOutput: tested program/software, test report(s).",
+        "ans":2,
+        "hint": "SRS & DD"
+      },
+      {
+        "id": 16,
+        "q_body": "What is a Design Document?",
+        "s1_body": "Maybe this is very boring.",
+        "s2_body": "It's a picture book.",
+        "s3_body": "It's a legendary document.",
+        "s4_body": "A design Document is a representation of a software design.",
+        "ans":4,
+        "hint": "4.. 4..."
+      },
+      {
+        "id": 17,
+        "q_body": "What are the inputs and outputs of the implementation phase?",
+        "s1_body": "Input: Tested program/software\nOutput: Released software and maintenance updates",
+        "s2_body": "Input: SRS(Software Requirement Specification).\noutput: DD(Design Document)",
+        "s3_body": "Input: DD (Design Document)\nOutput: Program/software, including source code, content, and media assets",
+        "s4_body": "Input: Un-tested program/software\nOutput: tested program/software, test report(s)",
+        "ans":3,
+        "hint": "DD & Program/software, including source code, content, and media assets"
+      },
+      {
+        "id": 18,
+        "q_body": "What are the inputs and outputs of the testing and integration phase?",
+        "s1_body": "Input: Tested program/software\nOutput: Released software and maintenance updates",
+        "s2_body": "Input: SRS(Software Requirement Specification).\noutput: DD(Design Document)",
+        "s3_body": "Input: DD (Design Document)\nOutput: Program/software, including source code, content, and media assets",
+        "s4_body": "Input: Un-tested program/software\nOutput: tested program/software, test report(s)",
+        "ans":4,
+        "hint": "Un-tested program/software & tested program/software, test report(s)"
+      },
+      {
+        "id": 19,
+        "q_body": "What is not kinds of tests?",
+        "s1_body": "User acceptance testing",
+        "s2_body": "Unit testing",
+        "s3_body": "Regression testing",
+        "s4_body": "Classification testing",
+        "ans":4,
+        "hint": "Classification...?"
+      },
+      {
+        "id": 20,
+        "q_body": "What are the inputs and outputs of the maintenance phase?",
+        "s1_body": "Input: Tested program/software\nOutput: Released software and maintenance updates",
+        "s2_body": "Input: SRS(Software Requirement Specification).\noutput: DD(Design Document)",
+        "s3_body": "Input: DD (Design Document)\nOutput: Program/software, including source code, content, and media assets",
+        "s4_body": "Input: Un-tested program/software\nOutput: tested program/software, test report(s).",
+        "ans":1,
+        "hint": "Tested program/software & Released software and maintenance updates"
+      },
+      {
+        "id": 21,
+        "q_body": "Where is the way to get complaints from limited people?",
+        "s1_body": "Implementation phase",
+        "s2_body": "Analysis phase",
+        "s3_body": "Maintenance phase",
+        "s4_body": "Planning phase",
+        "ans":3,
+        "hint": "Maintenance"
+      }
+
+    ]
+  },
+  {
+    "gid": 2,
+    "g_name": "SDLC models",
+    "problems":
+    [
+      {
+        "id": 1,
+        "q_body": "What is the waterfall model?",
+        "s1_body": "The iterative model breaks the application development process into smaller parts, which are tackled iterative.",
+        "s2_body": "It is a model that proceeds sequentially through each phase of SDLC.",
+        "s3_body": "It is an incremental prototyping model where prototypes are developed quickly in close collaboration with end-users.",
+        "s4_body": "In this model, the requirements are divided into small, standalone modules. Each function is developed and tested independently.",
+        "ans":2,
+        "hint": "Sequentially"
+      },
+      {
+        "id": 2,
+        "q_body": "What are the disadvantages of the waterfall model?",
+        "s1_body": "May become an infinite loop as customers come up with new features when they see the result.",
+        "s2_body": "It requires a well-defined requirements in the beginning.",
+        "s3_body": "There is no return or repetition to the previous stage. So, It can't get a new feature after the planning phase end.",
+        "s4_body": "Can be costly (time & money) because developers tackle one module at a time.",
+        "ans":3,
+        "hint": "No return or repetition"
+      },
+      {
+        "id": 3,
+        "q_body": "What is the V model?",
+        "s1_body": "As an extension of the waterfall model, it bends upward after the implementation phase.",
+        "s2_body": "In this model, the requirements are divided into small, standalone modules. Each function is developed and tested independently.",
+        "s3_body": "It is a model that proceeds sequentially through each phase of SDLC.",
+        "s4_body": "It is an incremental prototyping model where prototypes are developed quickly in close collaboration with end-users.",
+        "ans":1,
+        "hint": "It bends upward after the implementation phase."
+      },
+      {
+        "id": 4,
+        "q_body": "What are the disadvantages of the V model?",
+        "s1_body": "May become an infinite loop as customers come up with new features when they see the result.",
+        "s2_body": "It requires a well-defined requirements in the beginning.",
+        "s3_body": "It can be expensive to develop because it requires a large number of prototypes.",
+        "s4_body": "Does not solve the fundamental problems of the waterfall model. It can't go back to change something.",
+        "ans":4,
+        "hint": "It can't go back to change something."
+      },
+      {
+        "id": 5,
+        "q_body": "What is the incremental model?",
+        "s1_body": "It is a model that proceeds sequentially through each phase of SDLC.",
+        "s2_body": "In this model, the requirements are divided into small, standalone modules. Each function is developed and tested independently.",
+        "s3_body": "A risk-driven model that combines features from other models (e.g. incremental, waterfall, prototyping).",
+        "s4_body": "As an extension of the waterfall model, it bends upward after the implementation phase.",
+        "ans":2,
+        "hint": "Each function is developed and tested independently."
+      },
+      {
+        "id": 6,
+        "q_body": "What are the disadvantages of the incremental model?",
+        "s1_body": "It requires a well-defined requirements in the beginning.",
+        "s2_body": "May become an infinite loop as customers come up with new features when they see the result.",
+        "s3_body": "It can be expensive to develop because it requires a large number of prototypes.",
+        "s4_body": "A small unfinished detail can hold back the entire process.",
+        "ans":1,
+        "hint": "It requires a well-defined requirements in the beginning."
+      },
+      {
+        "id": 7,
+        "q_body": "What is the iterative model?",
+        "s1_body": "It is an incremental prototyping model where prototypes are developed quickly in close collaboration with end-users.",
+        "s2_body": "As an extension of the waterfall model, it bends upward after the implementation phase.",
+        "s3_body": "A risk-driven model that combines features from other models (e.g. incremental, waterfall, prototyping).",
+        "s4_body": "The iterative model breaks the application development process into smaller parts, which are tackled iterative.",
+        "ans":4,
+        "hint": "Breaks the application development process into smaller parts"
+      },
+      {
+        "id": 8,
+        "q_body": "What are the disadvantages of the iterative model?",
+        "s1_body": "If the radius is big, the cost is big.",
+        "s2_body": "It can't get a new feature after the planning phase end.",
+        "s3_body": "May become an infinite loop as customers come up with new features when they see the result.",
+        "s4_body": "It can be expensive to develop because it requires a large number of prototypes.",
+        "ans":3,
+        "hint": "Infinite loop"
+      },
+      {
+        "id": 9,
+        "q_body": "What is the RAD Model?",
+        "s1_body": "The iterative model breaks the application development process into smaller parts, which are tackled iterative.",
+        "s2_body": "An iterative and incremental model that divides a product into development cycles where each cycle produces a working version.",
+        "s3_body": "It is an incremental prototyping model where prototypes are developed quickly in close collaboration with end-users.",
+        "s4_body": "In this model, the requirements are divided into small, standalone modules. Each function is developed and tested independently.",
+        "ans":3,
+        "hint": "Incremental prototyping model"
+      },
+      {
+        "id": 10,
+        "q_body": "What are the disadvantages of the RAD model?",
+        "s1_body": "May become an infinite loop as customers come up with new features when they see the result.",
+        "s2_body": "There is no return or repetition to the previous stage.",
+        "s3_body": "It can be expensive to develop because it requires a large number of prototypes.",
+        "s4_body": "If the radius is big, the cost is big.",
+        "ans":3,
+        "hint": "Requires a large number of prototypes."
+      },
+      {
+        "id": 11,
+        "q_body": "What is the spiral model?",
+        "s1_body": "In this model, the requirements are divided into small, standalone modules. Each function is developed and tested independently.",
+        "s2_body": "It is an incremental prototyping model where prototypes are developed quickly in close collaboration with end-users.",
+        "s3_body": "The iterative model breaks the application development process into smaller parts, which are tackled iterative.",
+        "s4_body": "A risk-driven model that combines features from other models (e.g. incremental, waterfall, prototyping).",
+        "ans":4,
+        "hint": "A risk-driven mode"
+      },
+      {
+        "id": 12,
+        "q_body": "What are the disadvantages of the spiral model?",
+        "s1_body": "If the radius is big, the cost is big.",
+        "s2_body": "It can be expensive to develop because it requires a large number of prototypes.",
+        "s3_body": "Does not solve the fundamental problems of the waterfall model. It can't go back to change something.",
+        "s4_body": "May become an infinite loop as customers come up with new features when they see the result.",
+        "ans":1,
+        "hint": "If the radius is big..."
+      },
+      {
+        "id": 13,
+        "q_body": "What is difference between iterative model and agile?",
+        "s1_body": "The iterative model is not an incremental model.",
+        "s2_body": "The agile model combines iterative and incremental.",
+        "s3_body": "Agile model e gives working software as soon as possible.",
+        "s4_body": "The iterative model is more trendy. ",
+        "ans":4,
+        "hint": "The iterative model is not trendy."
+      },
+      {
+        "id": 14,
+        "q_body": "What are the advantages of the agile model?",
+        "s1_body": "Adaptive planning",
+        "s2_body": "Early release",
+        "s3_body": "Flexible responses to change",
+        "s4_body": "Perfect daily meeting",
+        "ans":4,
+        "hint": ""
+      }
+    ]
+  },
+  {
+    "gid": 3,
+    "g_name": "Scrum",
+    "problems":
+    [
+      {
+        "id": 1,
+        "q_body": "What is the scrum process?",
+        "s1_body": "An agile software development process model with focus on delivering results in a short time.",
+        "s2_body": "A waterfall software development process model with focus on delivering results in a limited resource.",
+        "s3_body": "An agile software development process model with focus on delivering results in a long time.",
+        "s4_body": "A waterfall software development process model with focus on delivering results in a limited resource.",
+        "ans":1,
+        "hint": "agile, short time"
+      },
+      {
+        "id": 2,
+        "q_body": "What is not in the roles of the scrum process?",
+        "s1_body": "Scrum Master",
+        "s2_body": "Development Team",
+        "s3_body": "Product Owner",
+        "s4_body": "Scrumbled egg",
+        "ans":4,
+        "hint": "There is food..."
+      },
+      {
+        "id": 3,
+        "q_body": "What is the scrum master's role?",
+        "s1_body": "Responsible for the happening of the Daily Scrum.",
+        "s2_body": "Make team members be disciplined.",
+        "s3_body": "Punishment",
+        "s4_body": "Firing a team member.",
+        "ans":1,
+        "hint": "Daily Scrum"
+      },
+      {
+        "id": 4,
+        "q_body": "What is the product owner's role?",
+        "s1_body": "Orders the work, defines the requirements, prioritizes features to be implemented, and reviews the results.",
+        "s2_body": "It's in charge of the atmosphere of the whole team. This could be the mascot of the team.",
+        "s3_body": "Manages, self-organizes and performs all the development work. Typically 4-9 people.",
+        "s4_body": "He tries not to let his team members feel the financial burden.",
+        "ans":1,
+        "hint": "Orders the work, defines the requirements, prioritizes features to be implemented, and reviews the results."
+      },
+      {
+        "id": 5,
+        "q_body": "What is the development team's role?",
+        "s1_body": "It plays a role of sitting in the office and looking at the atmosphere.",
+        "s2_body": "orders the work, defines the requirements, prioritizes features to be implemented, and reviews the results.",
+        "s3_body": "Manages, self-organizes and performs all the development work.",
+        "s4_body": "It's the lowest position on the team.",
+        "ans":3,
+        "hint": "Performs all the development work"
+      },
+      {
+        "id": 6,
+        "q_body": "What is not the scrum process.",
+        "s1_body": "Software versions are developed in a series of sprints that last from two weeks to one month.",
+        "s2_body": "Scrum teams are self-organizing",
+        "s3_body": "Selected requirements are placed to a sprint backlog which describes work to be done in each week.",
+        "s4_body": "Requirements are written as items in a product backlog that can be updated regularly",
+        "ans":2,
+        "hint": "in each week...?"
+      },
+      {
+        "id": 7,
+        "q_body": "What is not the product backlog?",
+        "s1_body": "It is an ordered list of everything that might be needed in the product and is the single source of requirements for any changes to be made to the product.",
+        "s2_body": "Estimates how long implementation of each item takes.",
+        "s3_body": "Typical duration is 2-4 weeks or a calendar month at most.",
+        "s4_body": "Prioritization can be changed in the beginning of each sprint.",
+        "ans":3,
+        "hint": "Typical duration is 2-4 weeks or a calendar month at most...?"
+      },
+      {
+        "id": 8,
+        "q_body": "What is the Sprint Backlog?",
+        "s1_body": "A set of Product Backlog items selected for the Sprint.",
+        "s2_body": "The Sprint Backlog is a forecast by the project owner.",
+        "s3_body": "The Sprint Backlog is usually not visible.",
+        "s4_body": "It's a document that lists things you shouldn't do in Sprint.",
+        "ans":1,
+        "hint": "A set of Product Backlog items selected for the Sprint."
+      },
+      {
+        "id": 9,
+        "q_body": "What is the Daily scrum?",
+        "s1_body": "The Daily Scrum is a 15-minute time-boxed event for the Development Team to synchronize activities and create a plan for the next 24 hours",
+        "s2_body": "The Daily Scrum is a 1-hour time-boxed event for the Development Team to synchronize activities and create a plan for the next 24 hours",
+        "s3_body": "The Daily Scrum is a 15-minute time-boxed event for the Development Team to synchronize activities and create a plan for the next week",
+        "s4_body": "The Daily Scrum is a 1-hour time-boxed event for the Development Team to synchronize activities and create a plan for the next next week",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 10,
+        "q_body": "What is the Sprint review?",
+        "s1_body": "It is an opportunity for the Scrum Team to inspect itself and create a plan for improvements to be enacted during the next Sprint.",
+        "s2_body": "It is when the Scrum Team and stakeholders inspect the outcome of the Sprint and share what went well and what not so well.",
+        "s3_body": "It is an opportunity for the Scrum Team to be inspected by CEO and create a plan for improvements to be enacted during the next Sprint.",
+        "s4_body": "It is when the Scrum Team and stakeholders inspect the income of the Sprint and share what went well and what not so well.",
+        "ans":2,
+        "hint": ""
+      },
+      {
+        "id": 11,
+        "q_body": "What is the Sprint Retrospective?",
+        "s1_body": "It is when the Scrum Team and stakeholders inspect the outcome of the Sprint and share what went well and what not so well.",
+        "s2_body": "It is when the Scrum Team and stakeholders inspect the income of the Sprint and share what went well and what not so well.",
+        "s3_body": "It is an opportunity for the Scrum Team to be inspected by CEO and create a plan for improvements to be enacted during the next Sprint.",
+        "s4_body": "It is an opportunity for the Scrum Team to inspect itself and create a plan for improvements to be enacted during the next Sprint.",
+        "ans":4,
+        "hint": ""
+      }
+
+    ]
+  },
+  {
+    "gid": 4,
+    "g_name": "Game Development Roles And Process",
+    "problems":
+    [
+      {
+        "id": 1,
+        "q_body": "What are the roles needed to develop the game?",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 2,
+        "q_body": "What is the role of game designer?",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 3,
+        "q_body": "What is the role of game artist?",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 4,
+        "q_body": "What is the role of game programmer?",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 5,
+        "q_body": "What is the role of level designer?",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 6,
+        "q_body": "What is the role of sound engineer?",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 7,
+        "q_body": "What is the role of game tester?",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 8,
+        "q_body": "What is the role of game producer?",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 9,
+        "q_body": "What is the role of game publisher?",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 10,
+        "q_body": "What is in the Game Development Stages?",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 11,
+        "q_body": "What is done at the planning stage?",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 12,
+        "q_body": "What is done at the pre-production stage?",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 13,
+        "q_body": "What is there in Game Conceptualization?",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 14,
+        "q_body": "What is Game Design Document?",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 15,
+        "q_body": "What do you do in post-production?",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      }
+
+    ]
+  },
+  {
+    "gid": 5,
+    "g_name": "Object-Oriented Analysis(OOA)",
+    "problems":
+    [
+      {
+        "id": 1,
+        "q_body": "Why is OOAD important?",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 2,
+        "q_body": "What should be done in analysis phase in OOAD?",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 3,
+        "q_body": "What should be done in design phase in OOAD?",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 4,
+        "q_body": "What is UML?",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 5,
+        "q_body": "Tell us about the process of Object-oriented analysis.",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 6,
+        "q_body": "What is goal of use case modeling?",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 7,
+        "q_body": "What is a use case diagram?",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 8,
+        "q_body": "What is a use case in use case diagram?",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 9,
+        "q_body": "What is a scenario in use case diagram?",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 10,
+        "q_body": "What kind of scenario is exist?",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 11,
+        "q_body": "What is goal of class modeling?",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 12,
+        "q_body": "Tell us about the process of class modeling.",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 13,
+        "q_body": "What is the class diagram?",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 14,
+        "q_body": "Tell me about visibility of +,-,#,~.",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 15,
+        "q_body": "What is dynamic modeling?",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 16,
+        "q_body": "Tell about what process is needed to draw state chart diagram.",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 17,
+        "q_body": "Tell about state chart diagram's syntax.",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 18,
+        "q_body": "At the end of the OOA process, What can we have?",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      }
+
+    ]
+  },
+  {
+    "gid": 6,
+    "g_name": "Object-Oriented Design(OOD)",
+    "problems":
+    [
+      {
+        "id": 1,
+        "q_body": "What is Object-Oriented Design?",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 2,
+        "q_body": "What is output of Object-Oriented Design?",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 3,
+        "q_body": "What process does OO Design go through?",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 4,
+        "q_body": "What is an activity diagram?",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 5,
+        "q_body": "What is a sequence diagram?",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 6,
+        "q_body": "",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 7,
+        "q_body": "",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 8,
+        "q_body": "",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 9,
+        "q_body": "",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 10,
+        "q_body": "",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      }
+    ]
+  },
+  {
+    "gid": 7,
+    "g_name": "Design Pattern1",
+    "problems":
+    [
+      {
+        "id": 1,
+        "q_body": "What is definition of design pattern?",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 2,
+        "q_body": "What is definition of context in design pattern?",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 3,
+        "q_body": "What is definition of problem in design pattern?",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 4,
+        "q_body": "What is definition of solution in design pattern?",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 5,
+        "q_body": "What kind of design pattern is exist?",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 6,
+        "q_body": "What is creational pattern?",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 7,
+        "q_body": "What is behavioral pattern?",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 8,
+        "q_body": "What is structural pattern?",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 9,
+        "q_body": "What is design principle 1?",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 10,
+        "q_body": "What is design principle 2?",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 11,
+        "q_body": "What is design principle 3?",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      }
+
+    ]
+  },
+  {
+    "gid": 8,
+    "g_name": "Design Pattern2",
+    "problems":
+    [
+      {
+        "id": 1,
+        "q_body": "What is the strategy pattern?",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 2,
+        "q_body": "What is the singleton pattern?",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 3,
+        "q_body": "How to implement Singleton pattern?",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 4,
+        "q_body": "What is the Adapters pattern?",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 5,
+        "q_body": "What kind of adapter implementation is exist?",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 6,
+        "q_body": "What is the Façade pattern?",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 7,
+        "q_body": "What is design principle 4?",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 8,
+        "q_body": "What is the Observer pattern?",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 9,
+        "q_body": "What is design principle 5?",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 10,
+        "q_body": "What is the Command pattern?",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 11,
+        "q_body": "What is the Decorator pattern?",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      },
+      {
+        "id": 12,
+        "q_body": "What is design principle 6?",
+        "s1_body": "",
+        "s2_body": "",
+        "s3_body": "",
+        "s4_body": "",
+        "ans":1,
+        "hint": ""
+      }
+    ]
+  }
+]

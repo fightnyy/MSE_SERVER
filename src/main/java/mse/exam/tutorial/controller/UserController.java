@@ -40,6 +40,4 @@ public class UserController {
     public ResponseEntity<User> getUserInfoWithUsername(@PathVariable String username) {
         return ResponseEntity.ok(userService.getUserWithAuthorities(username).get());
     }
-
-
 }

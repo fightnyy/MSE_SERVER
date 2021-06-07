@@ -12,25 +12,31 @@ import java.util.Optional;
 @Slf4j
 public class SecurityUtil {
 
-   private SecurityUtil() {
-   }
+    private SecurityUtil() {
+    }
 
-   public static Optional<String> getCurrentUsername() {
-      final Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+    public static Optional<String> getCurrentUsername() {
+        final Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
-      if (authentication == null) {
-         log.debug("Security Context에 인증 정보가 없습니다.");
-         return Optional.empty();
-      }
+        if (authentication == null) {
+            log.debug("Security Context에 인증 정보가 없습니다.");
+            return Optional.empty();
+        }
 
-      String username = null;
-      if (authentication.getPrincipal() instanceof UserDetails) {
-         UserDetails springSecurityUser = (UserDetails) authentication.getPrincipal();
-         username = springSecurityUser.getUsername();
-      } else if (authentication.getPrincipal() instanceof String) {
-         username = (String) authentication.getPrincipal();
-      }
+        String username = null;
+        if (authentication.getPrincipal() instanceof UserDetails) {
+            UserDetails springSecurityUser = (UserDetails) authentication.getPrincipal();
+            username = springSecurityUser.getUsername();
+        } else if (authentication.getPrincipal() instanceof String) {
+            username = (String) authentication.getPrincipal();
+        }
 
-      return Optional.ofNullable(username);
-   }
+        return Optional.ofNullable(username);
+    }
+
+    public static UserDetails getUser() {
+        final Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        return (UserDetails) authentication.getPrincipal();
+    }
+
 }
