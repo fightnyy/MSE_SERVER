@@ -9,8 +9,10 @@ import java.util.List;
 public class GroupsJsonDTO {
     @JsonProperty("gid")
     private long groupId;
+
     @JsonProperty("g_name")
     private String groupName;
+
     @JsonProperty("problems")
     private List<QuestionJsonDTO> questions;
 }

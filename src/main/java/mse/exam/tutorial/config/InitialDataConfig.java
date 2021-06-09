@@ -5,7 +5,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import lombok.var;
+import mse.exam.tutorial.dto.initial.ExamsJsonDTO;
 import mse.exam.tutorial.dto.initial.GroupsJsonDTO;
+import mse.exam.tutorial.entity.Exam;
 import mse.exam.tutorial.entity.Group;
 import mse.exam.tutorial.entity.Question;
 import mse.exam.tutorial.repository.GroupRepository;
@@ -60,6 +62,27 @@ public class InitialDataConfig {
                     group.getQuestions().add(question);
                 }
                 groupRepository.save(group);
+            }
+            log.info("initGroupsTable: persit done");
+        };
+    }
+
+    @Bean
+    public ApplicationRunner initExamsTable() {
+        return $ -> {
+            ClassPathResource resource = new ClassPathResource(examsDefaultData);
+            TypeReference<List<ExamsJsonDTO>> type = new TypeReference<List<ExamsJsonDTO>>() {
+            };
+            var dtoList = mapper.readValue(resource.getInputStream(), type);
+            log.info("initExamsTable: dtoList: {}", dtoList);
+            for (var $exam : dtoList) {
+                Exam exam = Exam.builder()
+//                        .groupId($group.getGroupId())
+                        .groupId($exam.getGroupId())
+                        .numPrograms($exam.getNumProblems())
+
+                        .build();
+//                groupRepository.save(exam);
             }
             log.info("initGroupsTable: persit done");
         };

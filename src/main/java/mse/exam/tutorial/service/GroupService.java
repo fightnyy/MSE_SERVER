@@ -19,8 +19,9 @@ public class GroupService {
     @Autowired
     private GroupRepository groupRepository;
 
-    public Group create(GroupInput groupInput) {
+    public Group updateGroup(GroupInput groupInput) {
         Group group = Converter.toModel(groupInput, Group.class);
+
         return groupRepository.save(group);
     }
 
@@ -36,12 +37,12 @@ public class GroupService {
         return result;
     }
 
-
-    public Group updateGroup(GroupInput groupInput){
-        Group group = Converter.toModel(groupInput, Group.class);
-        group = groupRepository.save(group);
-        return group;
-    }
+//
+//    public Group updateGroup(GroupInput groupInput){
+//        Group group = Converter.toModel(groupInput, Group.class);
+//        group = groupRepository.save(group);
+//        return group;
+//    }
 
     public boolean deleteGroup(GroupInput groupInput){
         Optional<Group> optional = groupRepository.findById(groupInput.getGroupId());
@@ -51,5 +52,14 @@ public class GroupService {
         } else {
             return false;
         }
+    }
+
+    // Only create group by ID and set this group name = Undefined
+    public boolean create(Long id) {
+        Group group = new Group();
+        group.setGroupId(id);
+        group.setName("Undefined");
+        groupRepository.save(group);
+        return true;
     }
 }

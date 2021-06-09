@@ -5,10 +5,7 @@ import mse.exam.tutorial.dto.input.GroupInput;
 import mse.exam.tutorial.service.GroupService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/admin/group")
@@ -19,7 +16,8 @@ public class GroupController {
     private GroupService groupService;
 
     @RequestMapping(value = "/create", method = RequestMethod.POST)
-    public ResponseEntity<?> create() {
+    public ResponseEntity<?> create(Long id) {
+        groupService.create(id);
         log.info("create");
         return ResponseEntity.ok().build();
     }
@@ -31,10 +29,19 @@ public class GroupController {
         return ResponseEntity.ok(responseEntity);
     }
 
-    @RequestMapping(value = "/update-group", method = RequestMethod.PUT)
+//    @RequestMapping(value = "/update-group", method = RequestMethod.PUT)
+   // @PutMapping()
+//    public ResponseEntity<?> updateGroup(@RequestBody GroupInput input) {
+//        log.info("updateGroup: GroupInput: {}", input);
+//        var responseEntity = groupService.create(input);
+//        log.info("updateGroup: GroupOutput: {}", responseEntity);
+//        return ResponseEntity.ok(responseEntity);
+//    }
+
+    @RequestMapping(value = "/update-group", method = RequestMethod.POST)
     public ResponseEntity<?> updateGroup(@RequestBody GroupInput input) {
         log.info("updateGroup: GroupInput: {}", input);
-        var responseEntity = groupService.create(input);
+        var responseEntity = groupService.updateGroup(input);
         log.info("updateGroup: GroupOutput: {}", responseEntity);
         return ResponseEntity.ok(responseEntity);
     }
