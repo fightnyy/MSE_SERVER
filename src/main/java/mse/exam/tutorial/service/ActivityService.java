@@ -1,19 +1,14 @@
 package mse.exam.tutorial.service;
 
-import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import mse.exam.tutorial.entity.Chito;
 import mse.exam.tutorial.entity.User;
 import mse.exam.tutorial.repository.UserRepository;
 import mse.exam.tutorial.util.SecurityUtil;
-import org.aspectj.lang.annotation.Before;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import java.util.Optional;
 
 @Service
@@ -49,8 +44,9 @@ public class ActivityService {
         present = findUser.getPresent();
         if (past == null&&present==null)
         {
-            past = "st";
-            present = "st";
+            System.out.println("WARNING!!");
+            findUser.setPast("st");
+            findUser.setPresent("st");
             findUser.setCounter(1);
         }
         else if(past.equals(present)) {
@@ -58,8 +54,8 @@ public class ActivityService {
         }
         else
         {
-            past = present;
-            present = "st";
+            findUser.setPast(findUser.getPresent());
+            findUser.setPresent("st");
             findUser.setCounter(1);
         }
         if (findUser.getCounter()<=3) {
