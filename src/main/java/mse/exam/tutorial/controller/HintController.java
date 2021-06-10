@@ -6,6 +6,7 @@ import mse.exam.tutorial.repository.UserRepository;
 import mse.exam.tutorial.util.SecurityUtil;
 import mse.exam.tutorial.dto.HintDto;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,11 +26,11 @@ public class HintController {
     private UserRepository ur;
     
     @Autowired
-    public HintController(){
+    public HintController(UserRepository ur){
         this.ur = ur;
     }
     
-    @PostMapping("/hint")
+    @PostMapping(value = "/hint", consumes = MediaType.APPLICATION_JSON_VALUE)
     public void saveHint(HintDto hint)
     {
         log.error("HELLO : " + hint);
