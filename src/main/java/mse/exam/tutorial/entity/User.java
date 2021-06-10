@@ -43,6 +43,8 @@ public class User {
    @Embedded
    private Chito chito;
 
+   private int hint;
+
    @ManyToMany
    @JoinTable(
       name = "user_authority",
@@ -57,7 +59,7 @@ public class User {
       Authority next = iterator.next();
       if (next.getAuthorityName().equals("ROLE_USER")) {
          chito = Chito.builder()
-                 .week(0)
+                 .week(1)
                  .grade(0.0)
                  .intelligence(50)
                  .health(50)
@@ -74,7 +76,6 @@ public class User {
          auth.add(au1);
          authorities = new HashSet<>(auth);
          System.out.println("authorities = " + authorities);
-         Iterator<Authority> iterator1 = authorities.iterator();
       }
    }
 }

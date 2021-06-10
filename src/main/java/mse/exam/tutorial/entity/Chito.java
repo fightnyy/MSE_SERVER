@@ -18,7 +18,7 @@ import javax.persistence.Embeddable;
 public class Chito {
 
 
-    private Integer week=10;
+    private Integer week=1;
 
     private Double grade=0.0;
 

@@ -25,6 +25,7 @@ public class ActivityService {
     int upIntelli = 3;
     int upHealth = 3;
     int upInterv = 3;
+    public static int counter=0;
 
 
 
@@ -52,7 +53,7 @@ public class ActivityService {
         User findUser = ur.findOneWithUserByUsername(currentUsername.get());
         Chito findChito = findUser.getChito();
         findChito.setHealth(findChito.getHealth() + upHealth);
-        findChito.setWeek(findChito.getWeek()-1);
+        findChito.setWeek(findChito.getWeek()+1);
         return findChito;
     }
 
@@ -62,7 +63,7 @@ public class ActivityService {
         User findUser = ur.findOneWithUserByUsername(currentUsername.get());
         Chito findChito = findUser.getChito();
         findChito.setSpeech(findChito.getSpeech() + upInterv);
-        findChito.setWeek(findChito.getWeek()-1);
+        findChito.setWeek(findChito.getWeek()+1);
         return findChito;
     }
     
