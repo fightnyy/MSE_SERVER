@@ -49,7 +49,7 @@ public class ActivityService {
             findUser.setPresent("st");
             findUser.setCounter(1);
         }
-        else if(past.equals(present)) {
+        else if(findUser.getPast().equals(findUser.getPresent())) {
             findUser.setCounter(findUser.getCounter()+1);
         }
         else
@@ -91,17 +91,17 @@ public class ActivityService {
         present = findUser.getPresent();
         if (past == null&&present==null)
         {
-            past = "Wo";
-            present = "Wo";
+            findUser.setPast("Wo");
+            findUser.setPresent("Wo");
             findUser.setCounter(1);
         }
-        else if(past.equals(present)) {
+        else if(findUser.getPast().equals(findUser.getPresent())) {
             findUser.setCounter(findUser.getCounter()+1);
         }
         else
         {
-            past = present;
-            present = "Wo";
+            findUser.setPast(findUser.getPresent());
+            findUser.setPresent("Wo");
             findUser.setCounter(1);
         }
         if (findUser.getCounter()<=3) {
@@ -116,9 +116,9 @@ public class ActivityService {
             return findChito;
         }
         else {
-            findChito.setIntelligence(findChito.getHealth() + 6);
+            findChito.setHealth(findChito.getHealth() + 6);
             findChito.setWeek(findChito.getWeek() + 1);
-            findChito.setHealth(findChito.getIntelligence() - 3);
+            findChito.setIntelligence(findChito.getIntelligence() - 3);
             findChito.setSpeech(findChito.getSpeech() - 3);
             if (findChito.getSpeech() < 0)
             {
@@ -135,20 +135,20 @@ public class ActivityService {
         past = findUser.getPast();
         present = findUser.getPresent();
         if (past == null && present == null) {
-            past = "In";
-            present = "In";
+            findUser.setPast("In");
+            findUser.setPresent("In");
             findUser.setCounter(1);
-        } else if (past.equals(present)) {
+        } else if (findUser.getPast().equals(findUser.getPresent())) {
             findUser.setCounter(findUser.getCounter() + 1);
         } else {
-            past = present;
-            present = "In";
+            findUser.setPast(findUser.getPresent());
+            findUser.setPresent("In");
             findUser.setCounter(1);
         }
         if (findUser.getCounter() <= 3) {
-            findChito.setHealth(findChito.getSpeech() + upInterv);
+            findChito.setSpeech(findChito.getSpeech() + upInterv);
             findChito.setIntelligence(findChito.getIntelligence() - 1);
-            findChito.setSpeech(findChito.getHealth() - 1);
+            findChito.setHealth(findChito.getHealth() - 1);
 
             if (findChito.getSpeech() < 0) {
                 findChito.setSpeech(0);
@@ -158,8 +158,8 @@ public class ActivityService {
         } else {
             findChito.setIntelligence(findChito.getSpeech() + 6);
             findChito.setWeek(findChito.getWeek() + 1);
-            findChito.setHealth(findChito.getIntelligence() - 3);
-            findChito.setSpeech(findChito.getHealth() - 3);
+            findChito.setHealth(findChito.getHealth() - 3);
+            findChito.setSpeech(findChito.getSpeech() - 3);
             if (findChito.getSpeech() < 0) {
                 findChito.setSpeech(0);
             }

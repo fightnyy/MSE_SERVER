@@ -7,6 +7,7 @@ import java.util.*;
 import lombok.*;
 import mse.exam.tutorial.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import java.util.*;
 
 import javax.persistence.*;
 
@@ -47,6 +48,10 @@ public class User {
    private int hint=0;
    @Column(name = "counter")
    private int counter=0;
+
+   @ElementCollection
+   @Column(name="grades")
+   List<Integer> grades = new ArrayList<>();
 
    @Column(name = "past")
    private String past = null;
