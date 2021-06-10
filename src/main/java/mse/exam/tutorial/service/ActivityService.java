@@ -25,7 +25,8 @@ public class ActivityService {
     int upIntelli = 3;
     int upHealth = 3;
     int upInterv = 3;
-    public static int counter=0;
+    String past = null;
+    String present = null;
 
 
 
@@ -39,12 +40,48 @@ public class ActivityService {
 
 
     public Chito doStudy()  {
+
+
         Optional<String> currentUsername = SecurityUtil.getCurrentUsername();
         User findUser = ur.findOneWithUserByUsername(currentUsername.get());
         Chito findChito = findUser.getChito();
-        findChito.setIntelligence(findChito.getIntelligence() + upIntelli);
-        findChito.setWeek(findChito.getWeek()+1);
-        return findChito;
+        past = findUser.getPast();
+        present = findUser.getPresent();
+        if (past == null&&present==null)
+        {
+            past = "st";
+            present = "st";
+            findUser.setCounter(1);
+        }
+        else if(past.equals(present)) {
+            findUser.setCounter(findUser.getCounter()+1);
+        }
+        else
+        {
+            findUser.setCounter(1);
+        }
+        if (findUser.getCounter()<=3) {
+            findChito.setIntelligence(findChito.getIntelligence() + upIntelli);
+            findChito.setHealth(findChito.getHealth()-1);
+            findChito.setSpeech(findChito.getSpeech() - 1);
+
+            if (findChito.getSpeech() < 0){
+                findChito.setSpeech(0);
+            }
+            findChito.setWeek(findChito.getWeek() + 1);
+            return findChito;
+        }
+        else {
+            findChito.setIntelligence(findChito.getIntelligence() + 6);
+            findChito.setWeek(findChito.getWeek() + 1);
+            findChito.setHealth(findChito.getHealth() - 3);
+            findChito.setSpeech(findChito.getSpeech() - 3);
+            if (findChito.getSpeech() < 0)
+            {
+                findChito.setSpeech(0);
+            }
+            return findChito;
+        }
     }
 
 
@@ -52,19 +89,80 @@ public class ActivityService {
         Optional<String> currentUsername = SecurityUtil.getCurrentUsername();
         User findUser = ur.findOneWithUserByUsername(currentUsername.get());
         Chito findChito = findUser.getChito();
-        findChito.setHealth(findChito.getHealth() + upHealth);
-        findChito.setWeek(findChito.getWeek()+1);
-        return findChito;
+        past = findUser.getPast();
+        present = findUser.getPresent();
+        if (past == null&&present==null)
+        {
+            past = "Wo";
+            present = "Wo";
+            findUser.setCounter(1);
+        }
+        else if(past.equals(present)) {
+            findUser.setCounter(findUser.getCounter()+1);
+        }
+        else
+        {
+            findUser.setCounter(0);
+        }
+        if (findUser.getCounter()<=3) {
+            findChito.setHealth(findChito.getHealth() + upHealth);
+            findChito.setIntelligence(findChito.getIntelligence()-1);
+            findChito.setSpeech(findChito.getSpeech() - 1);
+
+            if (findChito.getSpeech() < 0){
+                findChito.setSpeech(0);
+            }
+            findChito.setWeek(findChito.getWeek() + 1);
+            return findChito;
+        }
+        else {
+            findChito.setIntelligence(findChito.getHealth() + 6);
+            findChito.setWeek(findChito.getWeek() + 1);
+            findChito.setHealth(findChito.getIntelligence() - 3);
+            findChito.setSpeech(findChito.getSpeech() - 3);
+            if (findChito.getSpeech() < 0)
+            {
+                findChito.setSpeech(0);
+            }
+            return findChito;
+        }
     }
 
-    public Chito doInterview()
-    {
+    public Chito doInterview() {
         Optional<String> currentUsername = SecurityUtil.getCurrentUsername();
         User findUser = ur.findOneWithUserByUsername(currentUsername.get());
         Chito findChito = findUser.getChito();
-        findChito.setSpeech(findChito.getSpeech() + upInterv);
-        findChito.setWeek(findChito.getWeek()+1);
-        return findChito;
+        past = findUser.getPast();
+        present = findUser.getPresent();
+        if (past == null && present == null) {
+            past = "In";
+            present = "In";
+            findUser.setCounter(1);
+        } else if (past.equals(present)) {
+            findUser.setCounter(findUser.getCounter() + 1);
+        } else {
+            findUser.setCounter(0);
+        }
+        if (findUser.getCounter() <= 3) {
+            findChito.setHealth(findChito.getSpeech() + upInterv);
+            findChito.setIntelligence(findChito.getIntelligence() - 1);
+            findChito.setSpeech(findChito.getHealth() - 1);
+
+            if (findChito.getSpeech() < 0) {
+                findChito.setSpeech(0);
+            }
+            findChito.setWeek(findChito.getWeek() + 1);
+            return findChito;
+        } else {
+            findChito.setIntelligence(findChito.getSpeech() + 6);
+            findChito.setWeek(findChito.getWeek() + 1);
+            findChito.setHealth(findChito.getIntelligence() - 3);
+            findChito.setSpeech(findChito.getHealth() - 3);
+            if (findChito.getSpeech() < 0) {
+                findChito.setSpeech(0);
+            }
+            return findChito;
+        }
     }
     
 }

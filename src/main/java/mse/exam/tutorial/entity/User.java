@@ -43,7 +43,15 @@ public class User {
    @Embedded
    private Chito chito;
 
-   private int hint;
+   @Column(name = "hint")
+   private int hint=0;
+   @Column(name = "counter")
+   private int counter=0;
+
+   @Column(name = "past")
+   private String past = null;
+   @Column(name = "present")
+   private String present = null;
 
    @ManyToMany
    @JoinTable(
