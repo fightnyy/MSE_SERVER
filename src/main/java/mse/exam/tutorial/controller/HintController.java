@@ -37,5 +37,6 @@ public class HintController {
         Optional<String> currentUsername = SecurityUtil.getCurrentUsername();
         User findUser = ur.findOneWithUserByUsername(currentUsername.get());
         findUser.setHint(hint.getNum());
+        findUser.getChito().setWeek(findUser.getChito().getWeek()+1);
     }
 }
