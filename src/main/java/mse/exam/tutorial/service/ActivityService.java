@@ -35,8 +35,6 @@ public class ActivityService {
 
 
     public Chito doStudy()  {
-
-
         Optional<String> currentUsername = SecurityUtil.getCurrentUsername();
         User findUser = ur.findOneWithUserByUsername(currentUsername.get());
         Chito findChito = findUser.getChito();
@@ -44,7 +42,6 @@ public class ActivityService {
         present = findUser.getPresent();
         if (past == null&&present==null)
         {
-            System.out.println("WARNING!!");
             findUser.setPast("st");
             findUser.setPresent("st");
             findUser.setCounter(1);
@@ -76,7 +73,7 @@ public class ActivityService {
             findChito.setSpeech(findChito.getSpeech() - 3);
             if (findChito.getSpeech() < 0)
             {
-                findChito.setSpeech(1);
+                findChito.setSpeech(0);
             }
             return findChito;
         }
@@ -156,10 +153,10 @@ public class ActivityService {
             findChito.setWeek(findChito.getWeek() + 1);
             return findChito;
         } else {
-            findChito.setIntelligence(findChito.getSpeech() + 6);
+            findChito.setSpeech(findChito.getSpeech() + 6);
             findChito.setWeek(findChito.getWeek() + 1);
             findChito.setHealth(findChito.getHealth() - 3);
-            findChito.setSpeech(findChito.getSpeech() - 3);
+            findChito.setIntelligence(findChito.getIntelligence() - 3);
             if (findChito.getSpeech() < 0) {
                 findChito.setSpeech(0);
             }

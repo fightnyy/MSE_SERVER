@@ -49,9 +49,12 @@ public class User {
    @Column(name = "counter")
    private int counter=0;
 
+   @Column(name = "avg")
+   private double Average;
+
    @ElementCollection
    @Column(name="grades")
-   List<Integer> grades = new ArrayList<>();
+   List<Double> grades = new ArrayList<>();
 
    @Column(name = "past")
    private String past = null;
