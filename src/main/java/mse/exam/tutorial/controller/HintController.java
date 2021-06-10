@@ -52,5 +52,7 @@ public class HintController {
         double avg = sum / grades.size();
         findUser.setAverage(avg);
         findUser.setHint(findUser.getHint()-grade.getUsedhint());
+        findUser.getChito().setWeek(findUser
+        .getChito().getWeek()+1);
     }
 }
