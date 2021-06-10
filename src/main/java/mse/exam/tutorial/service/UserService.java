@@ -2,6 +2,7 @@ package mse.exam.tutorial.service;
 
 import mse.exam.tutorial.dto.UserDto;
 import mse.exam.tutorial.entity.Authority;
+import mse.exam.tutorial.entity.Chito;
 import mse.exam.tutorial.entity.User;
 import mse.exam.tutorial.repository.UserRepository;
 import mse.exam.tutorial.util.SecurityUtil;
@@ -52,6 +53,19 @@ public class UserService {
                 .authorities(Collections.singleton(authority))
                 .activated(true)
                 .build();
+
+        if (userDto.getUsername().equals("media"))
+        {
+            Chito chito = new Chito(127,4.5,60,60,60);
+            user = User.builder()
+                    .username(userDto.getUsername())
+                    .password(passwordEncoder.encode(userDto.getPassword()))
+                    .nickname(userDto.getNickname())
+                    .authorities(Collections.singleton(authority))
+                    .activated(true)
+                    .chito(chito)
+                    .build();
+        }
 
         return userRepository.save(user);
     }
