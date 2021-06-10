@@ -22,11 +22,11 @@ public class Chito {
 
     private Double grade=0.0;
 
-    private Integer intelligence=50;
+    private Integer intelligence=10;
 
-    private Integer health=50;
+    private Integer health=10;
 
-    private Integer speech=50;
+    private Integer speech=10;
 
 
     public void setTimePoint(Integer week) {

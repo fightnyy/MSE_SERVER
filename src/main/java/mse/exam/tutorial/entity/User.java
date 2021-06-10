@@ -69,9 +69,9 @@ public class User {
          chito = Chito.builder()
                  .week(1)
                  .grade(0.0)
-                 .intelligence(50)
-                 .health(50)
-                 .speech(50)
+                 .intelligence(10)
+                 .health(10)
+                 .speech(10)
                  .build();
       }
       else {
