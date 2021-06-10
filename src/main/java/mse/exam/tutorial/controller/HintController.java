@@ -51,5 +51,6 @@ public class HintController {
         }
         double avg = sum / grades.size();
         findUser.setAverage(avg);
+        findUser.setHint(findUser.getHint()-grade.getUsedhint());
     }
 }

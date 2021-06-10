@@ -13,4 +13,7 @@ import javax.validation.constraints.NotNull;
 public class GradeDto {
     @NotNull
     private Double num;
+
+    @NotNull
+    private int usedhint;
 }
