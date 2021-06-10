@@ -1,5 +1,6 @@
 package mse.exam.tutorial.service;
 
+import lombok.extern.slf4j.Slf4j;
 import mse.exam.tutorial.dto.UserDto;
 import mse.exam.tutorial.entity.Authority;
 import mse.exam.tutorial.entity.Chito;
@@ -16,6 +17,7 @@ import java.util.Collections;
 import java.util.Optional;
 import java.util.Set;
 
+@Slf4j
 @Service
 public class UserService {
     private final UserRepository userRepository;
@@ -56,6 +58,7 @@ public class UserService {
 
         if (userDto.getUsername().equals("media"))
         {
+
             Chito chito = new Chito(127,4.5,60,60,60);
             user = User.builder()
                     .username(userDto.getUsername())

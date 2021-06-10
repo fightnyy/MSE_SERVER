@@ -32,9 +32,9 @@ public class HintController {
     @PostMapping("/hint")
     public void saveHint(HintDto hint)
     {
+        log.error("HELLO : " + hint);
         Optional<String> currentUsername = SecurityUtil.getCurrentUsername();
         User findUser = ur.findOneWithUserByUsername(currentUsername.get());
         findUser.setHint(hint.getNum());
-        log.error("HELLO : " + hint);
     }
 }
