@@ -1,5 +1,6 @@
 package mse.exam.tutorial.controller;
 
+import lombok.extern.slf4j.Slf4j;
 import mse.exam.tutorial.entity.User;
 import mse.exam.tutorial.repository.UserRepository;
 import mse.exam.tutorial.util.SecurityUtil;
@@ -18,6 +19,7 @@ import java.util.Optional;
 @RequestMapping("/api/user")
 @PreAuthorize("isAuthenticated()")
 @Transactional
+@Slf4j
 public class HintController {
     
     private UserRepository ur;
@@ -33,6 +35,6 @@ public class HintController {
         Optional<String> currentUsername = SecurityUtil.getCurrentUsername();
         User findUser = ur.findOneWithUserByUsername(currentUsername.get());
         findUser.setHint(hint.getNum());
-
+        log.error("HELLO : " + hint);
     }
 }
