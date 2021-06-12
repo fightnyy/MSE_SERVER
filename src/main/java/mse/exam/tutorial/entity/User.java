@@ -73,6 +73,7 @@ public class User {
    public void createChito() {
       Iterator<Authority> iterator = authorities.iterator();
       Authority next = iterator.next();
+
       if (next.getAuthorityName().equals("ROLE_USER")) {
          chito = Chito.builder()
                  .week(1)
